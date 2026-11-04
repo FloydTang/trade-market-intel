@@ -1,9 +1,15 @@
 ---
 name: trade-market-intel
 description: Research and compare export markets before prospect discovery, using explicit product/HS scope, trade size and growth, evidence quality, and OEM/ODM/trader/brand fit. Use to decide where and to whom to sell; company due diligence belongs downstream.
+metadata:
+  author: "半斤九两科技 / EVENBETTER TECH"
+  version: "0.1.0"
+  homepage: "https://tang92.com"
 ---
 
 # 市场背调 / Trade Market Intel
+
+半斤九两科技出品；维护者 FloydTang。通用开源版本与服务说明见[README](README.md)。
 
 主动开发第一步：产品与卖方能力 → **市场背调** → 客户搜索 → 线索整理 → 客户背调 → 开发信草稿。
 

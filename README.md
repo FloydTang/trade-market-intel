@@ -1,8 +1,18 @@
 # Trade Market Intel · 市场背调 Skill
 
+**半斤九两科技 · EVENBETTER TECH 出品** · 维护：汤九两 / [FloydTang](https://github.com/FloydTang)
+
+[![Offline checks](https://github.com/FloydTang/trade-market-intel/actions/workflows/check.yml/badge.svg)](https://github.com/FloydTang/trade-market-intel/actions/workflows/check.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/FloydTang/trade-market-intel)](https://github.com/FloydTang/trade-market-intel/releases/latest)
+
+[公司官网](https://tang92.com) · [AI 外贸通](https://news.tang92.com) · [外贸 Skill 合集](https://github.com/FloydTang/trade-skills-collection)
+
 在搜客户之前，先判断产品应该进入哪些市场、面向什么买方，以及是否适合我方角色。跨行业、证据驱动的开源 Codex Skill，也可由其他代理宿主按同一契约执行。
 
 **链路：市场背调 → 客户搜索 → 线索整理 → 客户背调 → 开发信草稿。**
+
+当前版本：**v0.1.0**（2026-11-04）。通用 Skill、离线计算和文件交接已可使用；AI 外贸通线上自动执行仍按下文接入状态理解。
 
 ## 能力与边界
 
@@ -65,3 +75,11 @@ python3 scripts/check_discovery_compatibility.py --discovery-root /path/to/trade
 11组回归覆盖：单位换算、集团排除、缺报/零基数/下降、无效及重复输入、证据门槛、异常拦截、可复算清单、完整候选集的Top10/20、四角色与双流向、人工选定交接、资讯空结果/失败/返回契约。CI在Python3.10和3.14执行离线测试。来源真实性、企业能力和实时准入需逐次核查，单元测试不替代市场调研。
 
 真实新闻原文及企业研究不纳入公开示例。贡献及敏感问题处理见[CONTRIBUTING.md](CONTRIBUTING.md)、[SECURITY.md](SECURITY.md)。
+
+## 关于半斤九两与增强权益
+
+本项目是半斤九两科技的外贸 Skill 系列之一，服务主动开发中“先判断市场，再搜索客户”的业务节点。与客户搜索、线索整理、客户背调和开发信 Skill 配合使用，各节点保持明确输入、来源和审核边界。
+
+通用方法、计算脚本和合成示例按MIT开放。如需数据留存、统一编排、多代理协作或飞书落地，沿用现有外贸 Skill 的[增强权益说明入口](https://evenbetter.feishu.cn/wiki/W6GnwTZGFiUdJ0kXZv6cV4PSnpf)。具体服务范围以该入口及双方确认内容为准，不把开源仓库描述成已上线的完整自动化服务。
+
+品牌及业务信息：[tang92.com](https://tang92.com)。Copyright © 2026 半斤九两科技。
