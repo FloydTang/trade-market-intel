@@ -1,0 +1,75 @@
+{
+  "contract_version": "1.0",
+  "synthetic": true,
+  "selected_by": "demo operator",
+  "series_id": "fabric-import",
+  "scope": {
+    "id": "fabric",
+    "description": "Synthetic example of a narrowly scoped fabric basket, not an industry estimate",
+    "hs_version": "HS 2022 (illustrative; confirm source classification)",
+    "codes": [
+      "500720"
+    ],
+    "limitations": [
+      "Illustrative woven fabric scope only; silk pillowcases, sleepwear and scarves need separate classification. All figures synthetic."
+    ],
+    "product_or_offer": "silk woven fabric"
+  },
+  "seller_role": "OEM",
+  "market": "Market Alpha",
+  "tier": "B",
+  "sources": {
+    "EV-DEMO": {
+      "id": "EV-DEMO",
+      "url": "https://example.com/synthetic-silk-evidence",
+      "retrieved_at": "2026-11-04",
+      "quality": "synthetic",
+      "redistribution": "Synthetic fixture authored for this repository; no real trade observations."
+    }
+  },
+  "claims": [
+    {
+      "type": "missing",
+      "text": "Actual buyers and landed costs are unknown.",
+      "evidence_ids": []
+    }
+  ],
+  "collection_errors": [
+    "Demo has no live collection; do not use as market evidence."
+  ],
+  "decision": {
+    "series_id": "fabric-import",
+    "market": "Market Alpha",
+    "role_fit": {
+      "status": "supported",
+      "evidence_ids": [
+        "EV-DEMO"
+      ]
+    },
+    "buyer_evidence": {
+      "status": "unknown",
+      "evidence_ids": []
+    },
+    "landed_cost": {
+      "status": "unknown",
+      "evidence_ids": []
+    },
+    "customer_type": "silk fabric importer",
+    "search_keywords": [
+      "silk fabric importer",
+      "silk garment manufacturer"
+    ],
+    "exclude_terms": [
+      "jobs"
+    ],
+    "seller_role": "OEM",
+    "tier": "B",
+    "judgment_type": "inference",
+    "review_status": "draft"
+  },
+  "status": "selected_for_discovery_only",
+  "company_claims_authorized": false,
+  "outreach_authorized": false,
+  "downstream_rule": "Market context is not evidence about a particular buyer. Reverify facts and approve sales angles separately.",
+  "input_sha256": "d1c353760e5121319f742218f0132cbb0ec7d798b5ac11b26fc44808b1458d65"
+}

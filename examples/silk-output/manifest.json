@@ -1,0 +1,11 @@
+{
+  "status": "draft_for_review",
+  "input_sha256": "d1c353760e5121319f742218f0132cbb0ec7d798b5ac11b26fc44808b1458d65",
+  "files": {
+    "report.md": "9212c4d4aa80a4e5a824aa011963e69318acb19bd0613a5ee9cb37a1755cd0c0",
+    "rankings.json": "ae0ae1a3c9e319e5c2a6eab5477a730caf66b2d813ae64d9f27370b11f0b91e8",
+    "discovery-bridge.json": "be69f1a5b25c9bbc9eae25ce9b5c6deae977a1be616b8759cf0fc449b54823e2",
+    "records.csv": "2891393f3317e0fac62af6d01185cd1ad0def4077a61c19de3fc36b01409a323",
+    "input-snapshot.json": "d1c353760e5121319f742218f0132cbb0ec7d798b5ac11b26fc44808b1458d65"
+  }
+}

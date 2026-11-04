@@ -1,0 +1,403 @@
+{
+  "type": "object",
+  "properties": {
+    "synthetic": {
+      "type": "boolean"
+    },
+    "product_or_offer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "industry_lens": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seller_role": {
+      "enum": [
+        "OEM",
+        "ODM",
+        "trader",
+        "brand"
+      ]
+    },
+    "seller_context": {
+      "type": "object"
+    },
+    "top_n": {
+      "enum": [
+        10,
+        20
+      ]
+    },
+    "growth_base_min_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "retrieved_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "quality": {
+            "type": "string",
+            "minLength": 1
+          },
+          "redistribution": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "url",
+          "retrieved_at",
+          "quality",
+          "redistribution"
+        ]
+      }
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "hs_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "codes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9]+$"
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "product_or_offer": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "description",
+          "hs_version",
+          "codes",
+          "limitations"
+        ]
+      }
+    },
+    "series": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "flow": {
+            "enum": [
+              "global_import",
+              "china_export"
+            ]
+          },
+          "base_year": {
+            "type": "integer"
+          },
+          "year": {
+            "type": "integer"
+          },
+          "valuation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "coverage": {
+            "enum": [
+              "reported_available",
+              "listed_subset"
+            ]
+          },
+          "coverage_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "market": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "market_kind": {
+                  "enum": [
+                    "country",
+                    "group",
+                    "world",
+                    "unspecified"
+                  ]
+                },
+                "year": {
+                  "type": "integer"
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "unit": {
+                  "enum": [
+                    "USD",
+                    "thousand_usd",
+                    "million_usd"
+                  ]
+                },
+                "source_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "quantity": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "quantity_unit": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "anomaly": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "market",
+                "market_kind",
+                "year",
+                "value",
+                "unit",
+                "source_id"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "scope_id",
+          "flow",
+          "base_year",
+          "year",
+          "valuation",
+          "coverage",
+          "coverage_note",
+          "records"
+        ]
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "market": {
+            "type": "string",
+            "minLength": 1
+          },
+          "series_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role_fit": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "supported",
+                  "unknown",
+                  "adverse"
+                ]
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "status",
+              "evidence_ids"
+            ]
+          },
+          "buyer_evidence": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "supported",
+                  "unknown",
+                  "adverse"
+                ]
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "status",
+              "evidence_ids"
+            ]
+          },
+          "landed_cost": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "supported",
+                  "unknown",
+                  "adverse"
+                ]
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "status",
+              "evidence_ids"
+            ]
+          },
+          "customer_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "search_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "exclude_terms": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "anomaly": {
+            "type": "boolean"
+          },
+          "seller_role": {
+            "enum": [
+              "OEM",
+              "ODM",
+              "trader",
+              "brand"
+            ]
+          }
+        },
+        "required": [
+          "market",
+          "series_id",
+          "role_fit",
+          "buyer_evidence",
+          "landed_cost",
+          "customer_type",
+          "search_keywords",
+          "exclude_terms"
+        ]
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "observation",
+              "inference",
+              "missing"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "type",
+          "text",
+          "evidence_ids"
+        ]
+      }
+    },
+    "collection_errors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "product_or_offer",
+    "industry_lens",
+    "seller_role",
+    "seller_context",
+    "sources",
+    "scopes",
+    "series"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trade Market Intel evidence input"
+}

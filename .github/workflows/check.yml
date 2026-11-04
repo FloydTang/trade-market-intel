@@ -1,0 +1,18 @@
+name: Offline checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python scripts/run_regression_checks.py
+      - run: python scripts/build_market_report.py --input-json examples/silk-synthetic-input.json --output-dir /tmp/silk-market
+      - run: python scripts/export_handoff.py --input-json examples/silk-synthetic-input.json --series-id fabric-import --market 'Market Alpha' --selected-by 'CI demo' --output-dir /tmp/silk-handoff

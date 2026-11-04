@@ -1,0 +1,42 @@
+[
+  {
+    "product_or_offer": "silk woven fabric",
+    "target_market": "Market Alpha",
+    "customer_type": "silk fabric importer",
+    "industry_lens": "textiles",
+    "seller_context": {
+      "company_name": "Example Silk Mill (synthetic)",
+      "product_or_offer": "silk woven fabric",
+      "product_categories": [
+        "silk fabric"
+      ],
+      "target_customer_types": [
+        "fabric importer",
+        "garment manufacturer"
+      ],
+      "value_propositions": [],
+      "proof_points": [],
+      "forbidden_claims": [
+        "Do not claim unverified certifications or capacity."
+      ]
+    },
+    "search_keywords": [
+      "silk fabric importer",
+      "silk garment manufacturer"
+    ],
+    "exclude_terms": [
+      "jobs"
+    ],
+    "market_evidence_ids": [
+      "EV-DEMO"
+    ],
+    "market_tier": "B",
+    "market_research_seller_role": "OEM",
+    "synthetic": true,
+    "research_reference": "rankings.json",
+    "research_series_id": "fabric-import",
+    "research_scope_id": "fabric",
+    "approval_status": "draft",
+    "requires_user_market_selection": true
+  }
+]

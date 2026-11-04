@@ -1,0 +1,15 @@
+﻿market,market_kind,series_id,source_id,unit,value,value_usd,year
+Market Alpha,country,fabric-import,EV-DEMO,thousand_usd,2000,2000000,2024
+Market Alpha,country,fabric-import,EV-DEMO,thousand_usd,3000,3000000,2025
+Market Beta,country,fabric-import,EV-DEMO,thousand_usd,1500,1500000,2024
+Market Beta,country,fabric-import,EV-DEMO,thousand_usd,1800,1800000,2025
+Market Zero,country,fabric-import,EV-DEMO,thousand_usd,0,0,2024
+Market Zero,country,fabric-import,EV-DEMO,thousand_usd,100,100000,2025
+Market Missing,country,fabric-import,EV-DEMO,thousand_usd,500,500000,2025
+Market Decline,country,fabric-import,EV-DEMO,thousand_usd,1000,1000000,2024
+Market Decline,country,fabric-import,EV-DEMO,thousand_usd,700,700000,2025
+Example Bloc,group,fabric-import,EV-DEMO,thousand_usd,10000,10000000,2025
+Market Alpha,country,fabric-china-export,EV-DEMO,million_usd,1,1000000,2024
+Market Alpha,country,fabric-china-export,EV-DEMO,million_usd,1.1,1100000.0,2025
+Market Beta,country,fabric-china-export,EV-DEMO,million_usd,0.5,500000.0,2024
+Market Beta,country,fabric-china-export,EV-DEMO,million_usd,1.2,1200000.0,2025

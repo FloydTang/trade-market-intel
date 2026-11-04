@@ -1,0 +1,405 @@
+{
+  "status": "draft_for_review",
+  "seller_role": "OEM",
+  "product_or_offer": "silk woven fabric, synthetic seller and trade figures",
+  "sources": {
+    "EV-DEMO": {
+      "id": "EV-DEMO",
+      "url": "https://example.com/synthetic-silk-evidence",
+      "retrieved_at": "2026-11-04",
+      "quality": "synthetic",
+      "redistribution": "Synthetic fixture authored for this repository; no real trade observations."
+    }
+  },
+  "scopes": {
+    "fabric": {
+      "id": "fabric",
+      "description": "Synthetic example of a narrowly scoped fabric basket, not an industry estimate",
+      "hs_version": "HS 2022 (illustrative; confirm source classification)",
+      "codes": [
+        "500720"
+      ],
+      "limitations": [
+        "Illustrative woven fabric scope only; silk pillowcases, sleepwear and scarves need separate classification. All figures synthetic."
+      ],
+      "product_or_offer": "silk woven fabric"
+    }
+  },
+  "rankings": {
+    "fabric-import": {
+      "scope_id": "fabric",
+      "flow": "global_import",
+      "year": 2025,
+      "base_year": 2024,
+      "valuation": "CIF synthetic",
+      "coverage": "listed_subset",
+      "coverage_note": "Five invented markets only; not a global ranking.",
+      "growth_base_min_usd": 1000000,
+      "size": [
+        {
+          "market": "Market Alpha",
+          "base_usd": 2000000,
+          "current_usd": 3000000,
+          "delta_usd": 1000000,
+          "growth_pct": 50.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Beta",
+          "base_usd": 1500000,
+          "current_usd": 1800000,
+          "delta_usd": 300000,
+          "growth_pct": 20.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Decline",
+          "base_usd": 1000000,
+          "current_usd": 700000,
+          "delta_usd": -300000,
+          "growth_pct": -30.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Missing",
+          "base_usd": null,
+          "current_usd": 500000,
+          "delta_usd": null,
+          "growth_pct": null,
+          "base_status": "missing_not_zero",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Zero",
+          "base_usd": 0,
+          "current_usd": 100000,
+          "delta_usd": 100000,
+          "growth_pct": null,
+          "base_status": "reported_zero",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        }
+      ],
+      "positive_delta": [
+        {
+          "market": "Market Alpha",
+          "base_usd": 2000000,
+          "current_usd": 3000000,
+          "delta_usd": 1000000,
+          "growth_pct": 50.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Beta",
+          "base_usd": 1500000,
+          "current_usd": 1800000,
+          "delta_usd": 300000,
+          "growth_pct": 20.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Zero",
+          "base_usd": 0,
+          "current_usd": 100000,
+          "delta_usd": 100000,
+          "growth_pct": null,
+          "base_status": "reported_zero",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        }
+      ],
+      "positive_growth": [
+        {
+          "market": "Market Alpha",
+          "base_usd": 2000000,
+          "current_usd": 3000000,
+          "delta_usd": 1000000,
+          "growth_pct": 50.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Beta",
+          "base_usd": 1500000,
+          "current_usd": 1800000,
+          "delta_usd": 300000,
+          "growth_pct": 20.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        }
+      ],
+      "eligible_counts": {
+        "size": 5,
+        "positive_delta": 3,
+        "positive_growth": 2
+      },
+      "groups_not_in_country_ranking": [
+        {
+          "market": "Example Bloc",
+          "base_usd": null,
+          "current_usd": 10000000,
+          "delta_usd": null,
+          "growth_pct": null,
+          "base_status": "missing_not_zero",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false,
+          "market_kind": "group"
+        }
+      ],
+      "base_only_not_assumed_zero": [],
+      "current_missing_base": [
+        "Market Missing"
+      ]
+    },
+    "fabric-china-export": {
+      "scope_id": "fabric",
+      "flow": "china_export",
+      "year": 2025,
+      "base_year": 2024,
+      "valuation": "FOB (synthetic)",
+      "coverage": "listed_subset",
+      "coverage_note": "Synthetic China-reporter exports; independent of import series.",
+      "growth_base_min_usd": 1000000,
+      "size": [
+        {
+          "market": "Market Beta",
+          "base_usd": 500000.0,
+          "current_usd": 1200000.0,
+          "delta_usd": 700000.0,
+          "growth_pct": 140.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Alpha",
+          "base_usd": 1000000,
+          "current_usd": 1100000.0,
+          "delta_usd": 100000.0,
+          "growth_pct": 10.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        }
+      ],
+      "positive_delta": [
+        {
+          "market": "Market Beta",
+          "base_usd": 500000.0,
+          "current_usd": 1200000.0,
+          "delta_usd": 700000.0,
+          "growth_pct": 140.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        },
+        {
+          "market": "Market Alpha",
+          "base_usd": 1000000,
+          "current_usd": 1100000.0,
+          "delta_usd": 100000.0,
+          "growth_pct": 10.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        }
+      ],
+      "positive_growth": [
+        {
+          "market": "Market Alpha",
+          "base_usd": 1000000,
+          "current_usd": 1100000.0,
+          "delta_usd": 100000.0,
+          "growth_pct": 10.0,
+          "base_status": "reported",
+          "evidence_ids": [
+            "EV-DEMO"
+          ],
+          "anomaly": false
+        }
+      ],
+      "eligible_counts": {
+        "size": 2,
+        "positive_delta": 2,
+        "positive_growth": 1
+      },
+      "groups_not_in_country_ranking": [],
+      "base_only_not_assumed_zero": [],
+      "current_missing_base": []
+    }
+  },
+  "decisions": [
+    {
+      "series_id": "fabric-import",
+      "market": "Market Alpha",
+      "role_fit": {
+        "status": "supported",
+        "evidence_ids": [
+          "EV-DEMO"
+        ]
+      },
+      "buyer_evidence": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "landed_cost": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "customer_type": "silk fabric importer",
+      "search_keywords": [
+        "silk fabric importer",
+        "silk garment manufacturer"
+      ],
+      "exclude_terms": [
+        "jobs"
+      ],
+      "seller_role": "OEM",
+      "tier": "B",
+      "judgment_type": "inference",
+      "review_status": "draft"
+    },
+    {
+      "series_id": "fabric-import",
+      "market": "Market Alpha",
+      "role_fit": {
+        "status": "supported",
+        "evidence_ids": [
+          "EV-DEMO"
+        ]
+      },
+      "buyer_evidence": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "landed_cost": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "customer_type": "silk fabric importer",
+      "search_keywords": [
+        "silk fabric importer",
+        "silk garment manufacturer"
+      ],
+      "exclude_terms": [
+        "jobs"
+      ],
+      "seller_role": "ODM",
+      "tier": "B",
+      "judgment_type": "inference",
+      "review_status": "draft"
+    },
+    {
+      "series_id": "fabric-import",
+      "market": "Market Alpha",
+      "role_fit": {
+        "status": "supported",
+        "evidence_ids": [
+          "EV-DEMO"
+        ]
+      },
+      "buyer_evidence": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "landed_cost": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "customer_type": "silk fabric importer",
+      "search_keywords": [
+        "silk fabric importer",
+        "silk garment manufacturer"
+      ],
+      "exclude_terms": [
+        "jobs"
+      ],
+      "seller_role": "trader",
+      "tier": "B",
+      "judgment_type": "inference",
+      "review_status": "draft"
+    },
+    {
+      "series_id": "fabric-import",
+      "market": "Market Alpha",
+      "role_fit": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "buyer_evidence": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "landed_cost": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "customer_type": "silk fabric importer",
+      "search_keywords": [
+        "silk fabric importer",
+        "silk garment manufacturer"
+      ],
+      "exclude_terms": [
+        "jobs"
+      ],
+      "seller_role": "brand",
+      "tier": "hold",
+      "judgment_type": "inference",
+      "review_status": "draft"
+    }
+  ],
+  "claims": [
+    {
+      "type": "missing",
+      "text": "Actual buyers and landed costs are unknown.",
+      "evidence_ids": []
+    }
+  ],
+  "collection_errors": [
+    "Demo has no live collection; do not use as market evidence."
+  ],
+  "synthetic": true
+}

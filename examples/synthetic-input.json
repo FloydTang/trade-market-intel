@@ -1,0 +1,173 @@
+{
+  "synthetic": true,
+  "product_or_offer": "Anonymous woven natural-fiber product",
+  "industry_lens": "textile",
+  "seller_role": "OEM",
+  "seller_context": {
+    "company_name": "Anonymous supplier (synthetic)",
+    "product_categories": [
+      "woven fabric"
+    ],
+    "target_customer_types": [
+      "fabric importer"
+    ],
+    "forbidden_claims": [
+      "unverified capacity or certificates"
+    ]
+  },
+  "top_n": 20,
+  "growth_base_min_usd": 1000000,
+  "sources": [
+    {
+      "id": "EV-DEMO",
+      "url": "https://example.org/synthetic-trade-fixture",
+      "retrieved_at": "2026-11-04",
+      "quality": "synthetic_fixture_not_evidence",
+      "redistribution": "original synthetic values; freely reusable under repository license"
+    }
+  ],
+  "scopes": [
+    {
+      "id": "fabric",
+      "description": "Synthetic example of a narrowly scoped fabric basket, not an industry estimate",
+      "hs_version": "HS2022",
+      "codes": [
+        "500720"
+      ],
+      "limitations": [
+        "All figures and market labels are fabricated solely to test the calculator; not real HS500720 trade."
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "fabric-import",
+      "scope_id": "fabric",
+      "flow": "global_import",
+      "base_year": 2024,
+      "year": 2025,
+      "valuation": "CIF synthetic",
+      "coverage": "listed_subset",
+      "coverage_note": "Five invented markets only; not a global ranking.",
+      "records": [
+        {
+          "market": "Market Alpha",
+          "market_kind": "country",
+          "year": 2024,
+          "value": 2000,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Alpha",
+          "market_kind": "country",
+          "year": 2025,
+          "value": 3000,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Beta",
+          "market_kind": "country",
+          "year": 2024,
+          "value": 1500,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Beta",
+          "market_kind": "country",
+          "year": 2025,
+          "value": 1800,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Zero",
+          "market_kind": "country",
+          "year": 2024,
+          "value": 0,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Zero",
+          "market_kind": "country",
+          "year": 2025,
+          "value": 100,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Missing",
+          "market_kind": "country",
+          "year": 2025,
+          "value": 500,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Decline",
+          "market_kind": "country",
+          "year": 2024,
+          "value": 1000,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Market Decline",
+          "market_kind": "country",
+          "year": 2025,
+          "value": 700,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        },
+        {
+          "market": "Example Bloc",
+          "market_kind": "group",
+          "year": 2025,
+          "value": 10000,
+          "unit": "thousand_usd",
+          "source_id": "EV-DEMO"
+        }
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "series_id": "fabric-import",
+      "market": "Market Alpha",
+      "role_fit": {
+        "status": "supported",
+        "evidence_ids": [
+          "EV-DEMO"
+        ]
+      },
+      "buyer_evidence": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "landed_cost": {
+        "status": "unknown",
+        "evidence_ids": []
+      },
+      "customer_type": "fabric importer",
+      "search_keywords": [
+        "natural fiber fabric importer"
+      ],
+      "exclude_terms": [
+        "jobs"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "type": "missing",
+      "text": "Actual buyers and landed costs are unknown.",
+      "evidence_ids": []
+    }
+  ],
+  "collection_errors": [
+    "Demo has no live collection; do not use as market evidence."
+  ]
+}
