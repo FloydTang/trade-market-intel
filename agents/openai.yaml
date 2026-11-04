@@ -2,3 +2,11 @@ interface:
   display_name: "半斤九两 · 市场背调 Skill"
   short_description: "外贸客户搜索前的市场选择：贸易规模与增长、数据核验和角色适配"
   default_prompt: "使用 $trade-market-intel 为我的产品和卖方角色调研出口市场，输出有来源的选择与客户搜索brief。"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "waimaotong"
+      description: "AI外贸通只读资讯；近7日线索须核实原文，不能替代年度统计或买方证据"
+      transport: "streamable_http"
+      url: "https://news.tang92.com/api/mcp"

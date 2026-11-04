@@ -1,0 +1,41 @@
+{
+  "initialize": {
+    "protocolVersion": "2025-03-26",
+    "serverInfo": {
+      "name": "waimaotong",
+      "version": "synthetic-fixture"
+    },
+    "capabilities": {
+      "tools": {}
+    }
+  },
+  "tools/list": {
+    "tools": [
+      {
+        "name": "waimaotong_search",
+        "annotations": {
+          "readOnlyHint": true
+        }
+      }
+    ]
+  },
+  "tools/call": {
+    "structuredContent": {
+      "schemaVersion": 1,
+      "items": [
+        {
+          "title": "Synthetic trade signal — do not use as market fact",
+          "summary": "Fixture only; verify original sources in real research.",
+          "source": {
+            "name": "Synthetic fixture"
+          },
+          "publishedAt": "2026-11-04",
+          "links": {
+            "original": "https://example.com/trade-signal",
+            "aihot": "https://example.com/fixture-news"
+          }
+        }
+      ]
+    }
+  }
+}

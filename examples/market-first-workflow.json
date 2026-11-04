@@ -1,0 +1,36 @@
+{
+  "contract_version": "1.0",
+  "market_research": {
+    "input_json": "pipeline-market-synthetic.json",
+    "mcp": {
+      "mode": "fixture",
+      "query": "frozen vegetables",
+      "limit": 2,
+      "fixture_json": "mcp-protocol-fixture.json"
+    }
+  },
+  "workflow": {
+    "contract_version": "1.0",
+    "run_id": "market-first-synthetic-demo",
+    "start_mode": "discovery",
+    "lead_discovery": {
+      "mode": "fixture",
+      "selected_lead_id": "lead-001",
+      "fixtures_json": "pipeline-discovery-fixture.json"
+    },
+    "customer_intel": {
+      "mode": "reviewed_report",
+      "report_json": "pipeline-customer-intel-fixture.json"
+    },
+    "outreach": {
+      "email_type": "first_touch",
+      "product_or_offer": "frozen mixed vegetables",
+      "sender_name": "Demo Operator",
+      "sender_company": "Synthetic Supplier"
+    },
+    "exports": {
+      "container_bundle": true,
+      "feishu_sandbox": false
+    }
+  }
+}

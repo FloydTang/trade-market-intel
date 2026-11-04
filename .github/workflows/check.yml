@@ -13,6 +13,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - uses: actions/checkout@v4
+        with:
+          repository: FloydTang/trade-skills-collection
+          ref: a98b306de5a20100ef1192c2abf8d5d3936422eb
+          path: workflow-dependency
       - run: python scripts/run_regression_checks.py
+      - run: python scripts/run_mcp_regression_checks.py --workflow-root workflow-dependency
+      - run: python workflow-dependency/主动开发链路组合包/scripts/run_regression_checks.py
       - run: python scripts/build_market_report.py --input-json examples/silk-synthetic-input.json --output-dir /tmp/silk-market
       - run: python scripts/export_handoff.py --input-json examples/silk-synthetic-input.json --series-id fabric-import --market 'Market Alpha' --selected-by 'CI demo' --output-dir /tmp/silk-handoff

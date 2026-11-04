@@ -1,0 +1,9 @@
+# Merge only this named connection into your own Codex config.toml.
+# Public read-only endpoint; contains no credentials.
+[mcp_servers.waimaotong]
+url = "https://news.tang92.com/api/mcp"
+http_headers = { "X-Forwarded-Host" = "news.tang92.com" }
+enabled = true
+startup_timeout_sec = 25
+tool_timeout_sec = 45
+enabled_tools = ["waimaotong_get_latest", "waimaotong_search", "waimaotong_get_hot_topics", "waimaotong_get_story", "waimaotong_get_daily"]

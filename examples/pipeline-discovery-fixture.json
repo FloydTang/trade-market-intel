@@ -1,0 +1,52 @@
+{
+  "frozen mixed vegetables Poland importer": [
+    {
+      "title": "Example Frozen Buyer | Frozen vegetables importer in Poland",
+      "url": "https://frozen-buyer.example",
+      "snippet": "Example Frozen Buyer imports frozen vegetables for retail and private label programs in Poland.",
+      "source": "fixture"
+    },
+    {
+      "title": "Example Food Directory directory profile",
+      "url": "https://directory.example/polfood-sourcing",
+      "snippet": "Importer and distributor of frozen food products in Warsaw. Contact Demo Buyer for sourcing inquiries.",
+      "source": "fixture"
+    }
+  ],
+  "frozen food importer Poland importer distributor brand buyer": [
+    {
+      "title": "Example Frozen Distributor",
+      "url": "https://frozen-distributor.example",
+      "snippet": "Supplier and importer of frozen vegetables and fruit for private label retail in Poland.",
+      "source": "fixture"
+    },
+    {
+      "title": "Example Frozen Buyer contact",
+      "url": "https://frozen-buyer.example/contact",
+      "snippet": "Email contact@frozen-buyer.example for frozen mixed vegetables sourcing.",
+      "source": "fixture"
+    }
+  ],
+  "site:linkedin.com/company frozen mixed vegetables Poland importer": [
+    {
+      "title": "Example Frozen Buyer | LinkedIn",
+      "url": "https://www.linkedin.com/company/example-frozen-buyer-synthetic",
+      "snippet": "Example Frozen Buyer supports private-label frozen food distribution in Poland.",
+      "source": "fixture"
+    },
+    {
+      "title": "Example Frozen Distributor | LinkedIn",
+      "url": "https://www.linkedin.com/company/example-frozen-distributor-synthetic",
+      "snippet": "Example Frozen Distributor serves import and retail sourcing teams in Central Europe.",
+      "source": "fixture"
+    }
+  ],
+  "frozen mixed vegetables Poland importer \"retail\"": [
+    {
+      "title": "Example Frozen Buyer retail focus",
+      "url": "https://frozen-buyer.example/retail",
+      "snippet": "Retail and private label frozen vegetable solutions for supermarket chains.",
+      "source": "fixture"
+    }
+  ]
+}

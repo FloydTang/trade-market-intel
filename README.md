@@ -10,9 +10,9 @@
 
 在搜客户之前，先判断产品应该进入哪些市场、面向什么买方，以及是否适合我方角色。跨行业、证据驱动的开源 Codex Skill，也可由其他代理宿主按同一契约执行。
 
-**链路：市场背调 → 客户搜索 → 线索整理 → 客户背调 → 开发信草稿。**
+**链路：AI 外贸通 MCP → 市场背调 → 客户搜索 → 线索整理 → 客户背调 → 开发信草稿 → 真实联系记录 → 跟进信草稿。**
 
-当前版本：**v0.1.0**（2026-11-04）。通用 Skill、离线计算和文件交接已可使用；AI 外贸通线上自动执行仍按下文接入状态理解。
+当前版本：**v0.2.0**（2026-11-04）。通用 Skill、离线计算和文件交接已可使用；已接通 AI 外贸通只读MCP与市场优先编排；网站助手内执行仍按下文接入状态理解。
 
 ## 能力与边界
 
@@ -34,7 +34,7 @@ python3 scripts/build_market_report.py --input-json examples/synthetic-input.jso
 python3 scripts/run_regression_checks.py
 ```
 
-Python 3.10+，标准库即可。示例全部合成，不能作为实际市场结论。真实运行参考 [SKILL.md](SKILL.md)、[输入契约](references/input-contract.md)及[JSON Schema](schemas/market-input.schema.json)。统计和交接脚本不联网、不读取凭证；可选资讯适配脚本只读取AI外贸通公开GET接口。生成目录可含企业私有上下文，请存放仓库外。
+Python 3.10+，标准库即可。示例全部合成，不能作为实际市场结论。真实运行参考 [SKILL.md](SKILL.md)、[输入契约](references/input-contract.md)及[JSON Schema](schemas/market-input.schema.json)。统计和交接脚本不联网、不读取凭证；资讯适配脚本支持AI外贸通只读MCP，原REST脚本也保留为显式独立工具。生成目录可含企业私有上下文，请存放仓库外。
 
 ## 输出
 
@@ -44,7 +44,7 @@ Python 3.10+，标准库即可。示例全部合成，不能作为实际市场�
 
 ## 与既有Skill的关系
 
-沿用 [trade-lead-discovery](https://github.com/FloydTang/trade-lead-discovery) 的seller_context / target_market / customer_type等输入方式；公司级判断交给 [trade-customer-intel](https://github.com/FloydTang/trade-customer-intel)。本仓库是独立首版开发源，尚未接入集合仓库发行同步；未修改其他仓库。不宣称完整自动流水线或已有OpenClaw专用适配器。
+沿用 [trade-lead-discovery](https://github.com/FloydTang/trade-lead-discovery) 的seller_context / target_market / customer_type等输入方式；公司级判断交给 [trade-customer-intel](https://github.com/FloydTang/trade-customer-intel)。本仓库保留独立开发源；合集组合包已增加可选market_context传递，四个原有节点保持不变。完整链路由本仓库的市场优先入口委托组合包运行，不代表资讯站网页助手已经执行这些Skill。
 
 ## 公开范围与许可证
 
@@ -56,13 +56,13 @@ MIT，与现有对外Skill惯例一致。只发布通用方法、自有脚本、
 
 ```bash
 python3 scripts/build_market_report.py --input-json examples/silk-synthetic-input.json --output-dir /tmp/silk-market
-python3 scripts/collect_news_context.py --query silk --output /tmp/silk-market/market-news.json
+python3 scripts/collect_mcp_context.py --query silk --output /tmp/silk-market/market-news.json
 python3 scripts/export_handoff.py --input-json examples/silk-synthetic-input.json --series-id fabric-import --market 'Market Alpha' --selected-by 'demo operator' --news-context /tmp/silk-market/market-news.json --output-dir /tmp/silk-handoff
 ```
 
 在Codex中可直接说：`使用 $trade-market-intel，先界定我的产品与HS统计口径，再比较全球进口、中国出口及增长，按我的OEM能力选择2–3个市场并生成客户搜索输入。缺失资料请标明。` 首次请提供产品规格、卖方角色与可授权使用的能力资料；未确认的HS不直接报总市场。
 
-2026-11-04已检查AI外贸通部署工程：现有资讯API/MCP可供只读采集；助手chat和顾问留资不是Skill执行/市场报告导入接口。本次实现资讯读取适配和客户搜索文件交接，未更改线上工程、数据库或现有Skill，未部署线上自动开发流程。市场上下文由宿主保存给后续背调、开发信和跟进；详情见[接入契约及待办](references/integration.md)。
+2026-11-04已实测AI外贸通MCP初始化、工具发现及waimaotong_search调用。v0.2.0新增市场优先入口，自动把研究上下文传到背调和草稿，并在首封完成后生成跟进承接模板；服务端、网站助手和数据库未改动。跟进仍需真实联系记录和报告审批，详见[接入契约](references/integration.md)。
 
 ## 验证
 
@@ -83,3 +83,29 @@ python3 scripts/check_discovery_compatibility.py --discovery-root /path/to/trade
 通用方法、计算脚本和合成示例按MIT开放。如需数据留存、统一编排、多代理协作或飞书落地，沿用现有外贸 Skill 的[增强权益说明入口](https://evenbetter.feishu.cn/wiki/W6GnwTZGFiUdJ0kXZv6cV4PSnpf)。具体服务范围以该入口及双方确认内容为准，不把开源仓库描述成已上线的完整自动化服务。
 
 品牌及业务信息：[tang92.com](https://tang92.com)。Copyright © 2026 半斤九两科技。
+
+## 从MCP串起整条主动开发链路
+
+先将两个公开仓库放在本机，合集使用含market_context兼容代码的当前版本：
+
+```bash
+git clone https://github.com/FloydTang/trade-skills-collection.git
+# 在trade-market-intel目录中运行；示例MCP和客户数据均为明确标记的离线合成fixture
+python3 scripts/run_market_outreach.py --config examples/market-first-workflow.json --workflow-root ../trade-skills-collection --output-dir /tmp/market-first-run
+# 审阅市场报告后选择路线；此时会继续到客户背调并等待销售角度审批
+python3 scripts/run_market_outreach.py --config examples/market-first-workflow.json --workflow-root ../trade-skills-collection --output-dir /tmp/market-first-run --resume --selected-series-id food-import --selected-market Poland --selected-by 'demo operator'
+# 仅适用于该合成演示：模拟报告审核，生成可编辑草稿
+python3 scripts/run_market_outreach.py --config examples/market-first-workflow.json --workflow-root ../trade-skills-collection --output-dir /tmp/market-first-run --resume --approved-sales-angle-id ANGLE-01 --reviewer 'synthetic demo reviewer'
+```
+
+真实使用时复制配置到私有目录：`market_research.input_json`指向已核验的年度贸易证据；MCP设`mode: live`并提供产品/市场查询词，删除fixture_json；客户搜索设live，客户背调使用live_web或授权evidence，填写实际卖方信息。MCP不会替代海关统计或自动替你填写企业能力。
+
+运行状态分别保存在`00-market-pipeline-manifest.json`和`outreach/00-run-manifest.json`。退出码10为等待市场选择或销售审批，11为业务暂缓，2为输入/完整性问题，3为连接或执行失败；查看manifest中的next_action。恢复时冻结MCP结果和市场侧车，不重复采集后悄悄替换审批依据。
+
+完成后有`follow-up-plan.json`和`follow-up-config.template.json`。将跟进配置复制到运行目录外，填入真实previous_contact_context，复核当前事实；用现有组合包在新目录运行并审核新的报告哈希后，生成follow_up草稿。不能在已登记哈希的运行中原地编辑模板。
+
+```bash
+python3 scripts/run_mcp_regression_checks.py --workflow-root ../trade-skills-collection
+```
+
+新增6组检查覆盖MCP的JSON/SSE、初始化/工具发现/只读调用、空结果与错误，以及真实组合包的全链路、上下文传递、两次审批、跟进缺历史拦截、文件变更拒绝与MCP失败停止。所有业务演示均为合成；真实MCP连接另行只读验证。
